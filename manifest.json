@@ -1,0 +1,16 @@
+{
+    "name": "Dog API Chrome Extension Test",
+    "version": "1.0.2",
+    "description": "Beta Test warmup",
+    "manifest_version": 3,
+    "author": "Eric Zipor",
+    "icons": {
+      "16": "logo.png", 
+      "48": "logo.png", 
+      "128": "logo.png" 
+    },
+    "action": {
+      "default_popup": "index.html",
+      "default_title": "Random Dog Image"
+    }
+  }
