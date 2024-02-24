@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/x-icon">
-    <title>Random Dog Image</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Phish Hook</title>
 </head>
 <body>
-    <div>
-        <h2>Random Dog Image</h2>
-        <!-- Display dog image here -->
-        <div id="dogImageContainer"></div>
+    <div class="container">
+        <img src="banner.png" alt="Phish Hook Banner" class="banner" draggable="false">
+        <div class="button_container">
+            <!-- <button class="bubble-button" id="btn1">Go Phish!</button>-->
+            <button class="bubble-button" id="emailscrape_btn">Parse Emails</button>
+            <button class="bubble-button" id="urlscrape_btn">Parse URLs</button>
+        </div>
     </div>
 
-    <!-- Import the JavaScript file -->
-    <script src="script.js"></script>
+    <div class="counter_container">
+        <span id="email_counter"></span>
+        <span id="url_counter"></span>
+    </div>
+
+    <div class="container">
+        <ul id="email_list"></ul>
+        <ul id="urls_list" style="display:none;"></ul>
+    </div>
+    
+    <!-- Scraping & Formatting Script -->
+    <script src="content.js"></script>
+
+    <!-- Mouse Trailer -->
+    <div class="circle"></div>
+    <script src="cursor.js"></script>
+
+    <!-- Button Animation -->
+    <script src="bubble.js"></script> 
 </body>
 </html>
