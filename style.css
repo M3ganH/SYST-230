@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,652;1,652&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
+/* Hide scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 5px;  /* Remove scrollbar space */
+}
+
+/* Optional: add a thin scrollbar track */
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.04);  /* Optional: just make scrollbar track transparent */
+}
+
+/* Optional: add a thin scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #2c283f;  /* color of the scrollbar */
+}
+
+.circle {
+    --circle-size: 20px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adjust the glow effect as needed */
+}
+
+body {
+    background: linear-gradient(to bottom, #003566, #001D3D, #000814);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 400px;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.banner {
+    width: 50%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 20px; /* Adjust the value as needed */
+    padding-bottom: 20px; /* Adjust the value as needed */
+}
+
+.button_container {
+    display: flex;
+    justify-content: center; /* Add space between buttons */
+    width: auto; /* Ensure buttons take full width */
+    padding-bottom: 10px; /* Adjust the value as needed */
+}
+
+.bubble-button {
+    margin: 0 10px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: .5em 1em;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: 4facff;
+    color: #434343;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+
+  }
+  
+  .bubble-button:focus { outline: 0; }
+  
+  .bubble-button:before, .bubble-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  
+  .bubble-button:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, transparent 20%, #48dbfb 20%, transparent 30%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, transparent 10%, #48dbfb 15%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  }
+  
+  .bubble-button:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, transparent 10%, #48dbfb 15%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  }
+  
+  .bubble-button:active {
+    transform: scale(0.9);
+    background-color: #112B6B;
+    color:#d2f8f8;
+    box-shadow: 0 2px 25px rgba(159, 111, 255, 0.5);
+  }
+  
+  .bubble-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+  }
+  
+  .bubble-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+  }
+   @keyframes
+  topBubbles {  0% {
+   background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+   50% {
+   background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+   100% {
+   background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  }
+  @keyframes
+  bottomBubbles {  0% {
+   background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+   50% {
+   background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+   100% {
+   background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.counter_container {
+    margin-top: 5px; /* Reduce spacing between counter and content containers */
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#email_list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px; /* Reduce top margin for URL list */
+}
+
+#email_list li {
+    list-style: none; /* Remove bullet points */
+    padding: 5px 0;
+    border-bottom: 1px solid #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px; /* Adjust the max-width as needed */
+    text-align: left; /* Align text to the left */
+}
+
+#email_list li:last-child {
+    border-bottom: none;
+}
+
+#email_list li::before {
+    content: "• ";
+    color: #cbe4ff; /* Change the color as desired */
+}
+
+#urls_list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px; /* Reduce top margin for URL list */
+}
+
+#urls_list li {
+    padding: 5px 0;
+    list-style: none; /* Remove bullet points */
+    padding: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px; /* Adjust the max-width as needed */
+    text-align: left; /* Align text to the left */
+}
+
+#urls_list li:last-child {
+    border-bottom: none;
+}
+
