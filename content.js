@@ -151,3 +151,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const emailScrapeBtn = document.getElementById('emailscrape_btn');
+    const urlScrapeBtn = document.getElementById('urlscrape_btn');
+
+    emailScrapeBtn.addEventListener('click', () => {
+        document.body.style.background = 'linear-gradient(to bottom, #003566, #001D3D, #000814)';
+    });
+
+    urlScrapeBtn.addEventListener('click', () => {
+        document.body.style.background = 'linear-gradient(to bottom, #003566, #001D3D, #000814)';
+    });
+});

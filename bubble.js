@@ -1,4 +1,4 @@
-document.querySelectorAll('.bubble-button').forEach(button => {
+document.querySelectorAll('.bubble-button, .download-button').forEach(button => {
     button.addEventListener('mouseover', (e) => {
         e.preventDefault();
         e.target.classList.toggle("animate");
