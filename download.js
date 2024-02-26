@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const downloadTxtBtn = document.getElementById('download_txt_btn');
     const emailScrapeBtn = document.getElementById('emailscrape_btn');
     const urlScrapeBtn = document.getElementById('urlscrape_btn');
+    const alertContainer = document.querySelector('.alert'); // Select the alert container
 
     // Hide the download button initially
     downloadTxtBtn.style.display = 'none';
@@ -9,11 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
     emailScrapeBtn.addEventListener('click', () => {
         // Show the download button when Parse Emails button is clicked
         downloadTxtBtn.style.display = 'inline-block';
+        // Clear the alert when a different button is clicked
+        alertContainer.textContent = '';
     });
 
     urlScrapeBtn.addEventListener('click', () => {
         // Show the download button when Parse URLs button is clicked
         downloadTxtBtn.style.display = 'inline-block';
+        // Clear the alert when a different button is clicked
+        alertContainer.textContent = '';
     });
 
     downloadTxtBtn.addEventListener('click', () => {
@@ -35,8 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const now = new Date();
         const timestamp = `${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getDate()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getFullYear()}`;
 
-        // Trigger download with timestamp in the title
-        downloadTxtFile(contentToDownload, timestamp);
+        // Check if there is content to download
+        if (contentToDownload.trim() !== '') {
+            // Trigger download with timestamp in the title
+            downloadTxtFile(contentToDownload, timestamp);
+        } else {
+            // Display message in the alert container
+            alertContainer.textContent = 'There is no content to download.';
+        }
     });
 
     function getEmailListContent(emailList) {

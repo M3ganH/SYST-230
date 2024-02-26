@@ -13,7 +13,7 @@
 
 /* Optional: add a thin scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-    background: #2c283f;  /* color of the scrollbar */
+    background: #0ec6e8;  /* color of the scrollbar */
 }
 
 .circle {
@@ -26,7 +26,7 @@
     top: calc(var(--circle-size) / 2 * -1);
     left: calc(var(--circle-size) / 2 * -1);
     pointer-events: none;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adjust the glow effect as needed */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Adjust the glow effect as needed */
 }
 
 body {
@@ -50,7 +50,7 @@ body {
     width: 50%; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     padding-top: 20px; /* Adjust the value as needed */
-    padding-bottom: 20px; /* Adjust the value as needed */
+    padding-bottom: 15px; /* Adjust the value as needed */
 }
 
 .button_container {
@@ -61,8 +61,15 @@ body {
 }
 
 .bubble-button {
+    outline: none; /* Remove outline when focused */
+    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on mobile devices */
+    user-select: none; /* Prevent text selection */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
     margin: 0 10px;
     font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
     display: inline-block;
     font-size: 1em;
     padding: .5em 1em;
@@ -150,6 +157,7 @@ body {
 .download-button {
     margin: 0 10px;
     font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
     display: inline-block;
     font-size: 1em;
     padding: .5em 1em;
@@ -162,6 +170,7 @@ body {
     cursor: pointer;
     position: relative;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+
 }
 
 .download-button:focus { outline: 1px; }
@@ -221,6 +230,12 @@ body {
     100% { background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%; background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
 }
 
+.alert {
+    margin-bottom: 10px; /* Add margin at the bottom */
+    color: #ff0000; /* Bright red color */
+    font-weight: 600; /* Bold text */
+    text-decoration: underline;
+}
 
 .counter_container {
     margin-top: 5px; /* Reduce spacing between counter and content containers */

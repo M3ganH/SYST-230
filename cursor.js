@@ -17,7 +17,7 @@ window.addEventListener('mousemove', (e) => {
 });
 
 // Smoothing factor for cursor movement speed (0 = smoother, 1 = instant)
-const speed = 0.17;
+const speed = 0.1;
 
 // Start animation
 const tick = () => {
@@ -38,7 +38,7 @@ const tick = () => {
   // 2. Calculate mouse velocity using Pythagorean theorem and adjust speed
   const mouseVelocity = Math.min(Math.sqrt(deltaMouseX**2 + deltaMouseY**2) * 4, 150); 
   // 3. Convert mouse velocity to a value in the range [0, 0.5]
-  const scaleValue = (mouseVelocity / 150) * 0.5;
+  const scaleValue = (mouseVelocity / 150) * .5;
   // 4. Smoothly update the current scale
   currentScale += (scaleValue - currentScale) * speed;
   // 5. Create a transformation string for scaling
@@ -61,5 +61,8 @@ const tick = () => {
   window.requestAnimationFrame(tick);
 }
 
+
+
 // Start the animation loop
 tick();
+
