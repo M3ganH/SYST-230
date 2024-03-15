@@ -1,5 +1,5 @@
 // Array of CSV file URLs
-const csvUrls = ['database/email1.csv', 'database/email2.csv', 'database/email3.csv', 'database/url1.csv'];
+const csvUrls = ['https://raw.githubusercontent.com/M3ganH/SYST-230/main/Phish%20Hook%20Database%20-%20Sheet1.csv'];
 
 // Usage
 const scanBtn = document.getElementById('scan_btn');

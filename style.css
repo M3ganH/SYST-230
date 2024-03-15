@@ -333,3 +333,8 @@ h1 {
   #malicious_counter {
     font-family: "Geist Mono";
   }
+
+.pyscript {
+    margin: 0.5rem;
+    transform: translatex(200px);
+}

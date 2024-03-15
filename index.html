@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="icon" href="embargo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Phish Hook</title>
+
+    <!-- Python -->
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
 </head>
 <body>
+
     <div class="container">
-        
-        <img src="banner.png" alt="Phish Hook Banner" class="banner" draggable="false">
-        
-
-
+        <img src="embargo/banner.png" alt="Phish Hook Banner" class="banner" draggable="false">
         <div class="button_container">  
             <button class="bubble-button" id="emailscrape_btn">Parse Emails</button>
             <button class="bubble-button" id="urlscrape_btn">Parse URLs</button>
             <button class="bubble-button" id="scan_btn">Scan Database</button>
         </div>
-
     </div>
 
     <div class="malicious_container" style="display: none;">
@@ -41,14 +41,19 @@
         <ul id="urls_list" style="display:none;"></ul>
 
     </div>
-    
+
     <!-- Alert Message -->
     <div class="container">
         <div class="alert"></div> 
     </div>
 
+
+
     <!-- Scraping & Formatting Script -->
     <script src="content.js"></script>
+
+    <!-- Virtual Database Integration -->
+    <script src="sheet.js"></script>
 
     <!-- Reading CSV file -->
     <script src="reader.js"></script>
