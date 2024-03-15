@@ -9,24 +9,37 @@
 </head>
 <body>
     <div class="container">
+        
         <img src="banner.png" alt="Phish Hook Banner" class="banner" draggable="false">
-        <div class="button_container">
-            <!-- <button class="bubble-button" id="btn1">Go Phish!</button>-->
+        
+
+
+        <div class="button_container">  
             <button class="bubble-button" id="emailscrape_btn">Parse Emails</button>
             <button class="bubble-button" id="urlscrape_btn">Parse URLs</button>
+            <button class="bubble-button" id="scan_btn">Scan Database</button>
         </div>
+
+    </div>
+
+    <div class="malicious_container" style="display: none;">
+        <span class="malicious_counter" id="malicious_counter"></span>
+        <ul id="malicious_found"></ul>
     </div>
 
     <div class="counter_container">
+
         <span id="email_counter"></span>
         <span id="url_counter"></span>
         <button class="download-button" id="download_txt_btn">Save as Text File</button>
+
     </div>
 
-
     <div class="container">
+        
         <ul id="email_list"></ul>
         <ul id="urls_list" style="display:none;"></ul>
+
     </div>
     
     <!-- Alert Message -->
@@ -36,6 +49,9 @@
 
     <!-- Scraping & Formatting Script -->
     <script src="content.js"></script>
+
+    <!-- Reading CSV file -->
+    <script src="reader.js"></script>
 
     <!-- Button Animation -->
     <script src="bubble.js"></script> 

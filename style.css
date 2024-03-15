@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,652;1,652&display=swap');
+@font-face {
+    font-family: "Geist Mono";
+    src: url(https://assets.codepen.io/605876/GeistMonoVariableVF.ttf);
+  }
 /* font-family: 'Open Sans', sans-serif; */
 /* Hide scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
@@ -238,6 +242,7 @@ body {
 }
 
 .counter_container {
+    font-family: "Geist Mono";
     margin-top: 5px; /* Reduce spacing between counter and content containers */
 }
 
@@ -269,7 +274,7 @@ h1 {
 }
 
 #email_list li::before {
-    content: "• ";
+    /* content: "• "; */
     color: #cbe4ff; /* Change the color as desired */
 }
 
@@ -296,3 +301,35 @@ h1 {
     border-bottom: none;
 }
 
+.malicious_container {
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #malicious_found {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px; /* Reduce top margin for malicious list */
+  }
+  
+  #malicious_found li {
+    padding: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis (...) for clipped text */
+    max-width: 300px; /* Adjust the max-width as needed */
+    text-align: left; /* Align text to the left */
+  }
+  
+  #malicious_found li:last-child {
+    border-bottom: none;
+  }
+  
+  #malicious_counter {
+    font-family: "Geist Mono";
+  }

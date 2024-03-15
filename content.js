@@ -98,7 +98,7 @@ function scrapeEmailsFromPage() {
 // function to scrape URLs
 function scrapeUrlsFromPage() {
     // RegEx to parse URLs from HTML code
-    const urlRegex = /(https?:\/\/[^\s]+)/g; // Match URLs starting with http:// or https://
+    const urlRegex = /(?<="|'|=|>)(https?:\/\/[^\s"'<>]+)/g;; // Match URLs starting with http:// or https://
 
     // Parse URLs from the HTML of the page
     let urls = document.body.innerHTML.match(urlRegex);
