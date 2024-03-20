@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,652;1,652&display=swap');
+@font-face {
+    font-family: "Geist Mono";
+    src: url(https://assets.codepen.io/605876/GeistMonoVariableVF.ttf);
+  }
+
+/* Hide scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 5px;  /* Remove scrollbar space */
+}
+
+/* Optional: add a thin scrollbar track */
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.04);  /* Optional: just make scrollbar track transparent */
+}
+
+/* Optional: add a thin scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #0ec7e8ba;  /* color of the scrollbar */
+}
+
+.circle {
+    --circle-size: 20px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Adjust the glow effect as needed */
+}
+
+body {
+    background: #3061cb;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 400px;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.banner {
+    width: 50%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 20px; /* Adjust the value as needed */
+    padding-bottom: 15px; /* Adjust the value as needed */
+}
+
+.button_container {
+    display: flex;
+    justify-content: center; /* Add space between buttons */
+    width: auto; /* Ensure buttons take full width */
+    padding-bottom: 10px; /* Adjust the value as needed */
+}
+
+.bubble-button {
+    outline: none; /* Remove outline when focused */
+    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on mobile devices */
+    user-select: none; /* Prevent text selection */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    margin: 0 10px;
+    font-family: "Geist Mono";
+    font-weight: 500;
+    display: inline-block;
+    font-size: 1em;
+    padding: .5em 1em;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: 4facff;
+    color: #434343;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+
+  }
+  
+  .bubble-button:focus { outline: 1px; }
+  
+  .bubble-button:before, .bubble-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  
+  .bubble-button:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, transparent 20%, #48dbfb 20%, transparent 30%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, transparent 10%, #48dbfb 15%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  }
+  
+  .bubble-button:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, transparent 10%, #48dbfb 15%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%), radial-gradient(circle, #48dbfb 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  }
+  
+  .bubble-button:active {
+    transform: scale(0.9);
+    background-color: #112B6B;
+    color:#d2f8f8;
+    box-shadow: 0 2px 25px rgba(159, 111, 255, 0.5);
+  }
+  
+  .bubble-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+  }
+  
+  .bubble-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+  }
+   @keyframes
+  topBubbles {  0% {
+   background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+   50% {
+   background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+   100% {
+   background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  }
+  @keyframes
+  bottomBubbles {  0% {
+   background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+   50% {
+   background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+   100% {
+   background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.download-button {
+    margin: 0 10px;
+    font-family: "Geist Mono";
+    font-weight: 500;
+    display: inline-block;
+    font-size: 1em;
+    padding: .5em 1em;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #00FF80; /* Light green */
+    color: #434343;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+
+}
+
+.download-button:focus { outline: 1px; }
+
+.download-button:before, .download-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+.download-button:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, transparent 20%, #00FF80 20%, transparent 30%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, transparent 10%, #00FF80 15%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.download-button:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, transparent 10%, #00FF80 15%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%), radial-gradient(circle, #00FF80 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.download-button:active {
+    transform: scale(0.9);
+    background-color: #004d26; /* Darker green on click */
+    color: #d2f8f8; /* Light text color */
+    box-shadow: 0 2px 25px rgba(159, 111, 255, 0.5);
+}
+
+.download-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.download-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+    0% { background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%; }
+    50% { background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%; }
+    100% { background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%; background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+}
+
+@keyframes bottomBubbles {
+    0% { background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%; }
+    50% { background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%; }
+    100% { background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%; background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+}
+
+.alert {
+    margin-bottom: 10px; /* Add margin at the bottom */
+    color: #ff0000; /* Bright red color */
+    font-weight: 600; /* Bold text */
+    text-decoration: underline;
+}
+
+.counter_container {
+    font-family: "Geist Mono";
+    margin-top: 5px; /* Reduce spacing between counter and content containers */
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#email_list {
+
+    list-style: none;
+    padding: 0;
+    margin-top: 5px; /* Reduce top margin for URL list */
+}
+
+#email_list li {
+    list-style: none; /* Remove bullet points */
+    padding: 5px 0;
+    border-bottom: 1px solid #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px; /* Adjust the max-width as needed */
+    text-align: left; /* Align text to the left */
+}
+
+#email_list li:last-child {
+    border-bottom: none;
+}
+
+#email_list li::before {
+    /* content: "• "; */
+    color: #cbe4ff; /* Change the color as desired */
+}
+
+#urls_list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px; /* Reduce top margin for URL list */
+}
+
+#urls_list li {
+    padding: 5px 0;
+    list-style: none; /* Remove bullet points */
+    padding: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    max-width: 300px; /* Adjust the max-width as needed */
+    text-align: left; /* Align text to the left */
+}
+
+#urls_list li:last-child {
+    border-bottom: none;
+}
+
+.malicious_container {
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #malicious_found {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px; /* Reduce top margin for malicious list */
+  }
+  
+  #malicious_found li {
+    padding: 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis (...) for clipped text */
+    max-width: 300px; /* Adjust the max-width as needed */
+    text-align: left; /* Align text to the left */
+  }
+  
+  #malicious_found li:last-child {
+    border-bottom: none;
+  }
+  
+  #malicious_counter {
+    font-family: "Geist Mono";
+  }
+
+.loading-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.loading-text {
+    color: #fff;
+    font-family: "Geist Mono";
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
