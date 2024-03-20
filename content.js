@@ -97,8 +97,8 @@ function scrapeEmailsFromPage() {
 
 // function to scrape URLs
 function scrapeUrlsFromPage() {
-    // RegEx to parse URLs from HTML code
-    const urlRegex = /(?<="|'|=|>)(https?:\/\/[^\s"'<>]+)/g;; // Match URLs starting with http:// or https://
+    // RegEx to parse URLs from HTML code and add "/" at the end
+    const urlRegex = /(?<="|'|=|>)(https?:\/\/[^\s"'<>\\]+\/)/g; // Match URLs starting with http:// or https:// without backslashes and add "/" at the end
 
     // Parse URLs from the HTML of the page
     let urls = document.body.innerHTML.match(urlRegex);
@@ -106,6 +106,8 @@ function scrapeUrlsFromPage() {
     // Send URLs to popup container
     chrome.runtime.sendMessage({urls});
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const emailScrapeBtn = document.getElementById('emailscrape_btn');
@@ -157,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const urlScrapeBtn = document.getElementById('urlscrape_btn');
 
     emailScrapeBtn.addEventListener('click', () => {
-        document.body.style.background = 'linear-gradient(to bottom, #003566, #001D3D, #000814)';
+        document.body.style.background = 'linear-gradient(to bottom, #3061cb, #01438c, #000814)';
     });
 
     urlScrapeBtn.addEventListener('click', () => {
-        document.body.style.background = 'linear-gradient(to bottom, #003566, #001D3D, #000814)';
+        document.body.style.background = 'linear-gradient(to bottom, #3061cb, #01438c, #000814)';
     });
 });

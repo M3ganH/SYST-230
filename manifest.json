@@ -1,13 +1,13 @@
 {
   "name": "Phish Hook",
-  "version": "1.0.9",
-  "description": "Beta Test warmup",
+  "version": "1.19.0",
+  "description": "Scan, scrape, and parse emails and URLs to detect phishing attempts against real-time active databases.",
   "manifest_version": 3,
   "author": ["Christopher Ghanma", "Megan Hoxha", "Ronak Singh", "Eric Zipor", "Luke Wilson"],
   "icons": {
-    "16": "logo.png", 
-    "48": "logo.png", 
-    "128": "logo.png" 
+    "16": "graphics/logo.png", 
+    "48": "graphics/logo.png", 
+    "128": "graphics/logo.png" 
   },
   "action": {
     "default_popup": "index.html",

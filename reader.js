@@ -1,5 +1,5 @@
 // Array of CSV file URLs
-const csvUrls = ['https://raw.githubusercontent.com/M3ganH/SYST-230/main/Phish%20Hook%20Database%20-%20Sheet1.csv'];
+const csvUrls = ['https://docs.google.com/spreadsheets/d/1NvPenZaXWmo7dfEBa69Sp3eMQy2R0d719XBBfObXdrU/export?format=csv','https://docs.google.com/spreadsheets/d/1TNKLA20WcmQ7mqa-98sftjS3ug1Tp83umW_Eoc428i4/export?format=csv'];
 
 // Usage
 const scanBtn = document.getElementById('scan_btn');
@@ -85,3 +85,30 @@ function updateMaliciousCounter(count) {
 function showAlert(message) {
     alertContainer.textContent = message;
 }
+
+scanBtn.addEventListener('click', async () => {
+    console.log('Scan button clicked.');
+    try {
+        const loadingDialog = document.getElementById('loadingDialog');
+        loadingDialog.style.display = 'flex'; // Show the loading dialog
+
+        const csvContent = await readCSVFromUrls(csvUrls);
+        console.log('CSV content:', csvContent);
+        const commonEmails = findCommonItems(uniqueEmails, csvContent);
+        const commonUrls = findCommonItems(uniqueUrls, csvContent);
+        const commonItems = [...commonEmails, ...commonUrls];
+        console.log('Common items:', commonItems);
+
+        if (uniqueEmails.size === 0 && uniqueUrls.size === 0) {
+            showAlert('No items parsed. Please parse before scanning.');
+            loadingDialog.style.display = 'none'; // Hide the loading dialog
+            return;
+        }
+
+        displayCommonItems(commonItems);
+        loadingDialog.style.display = 'none'; // Hide the loading dialog
+    } catch (error) {
+        console.error('Error reading CSV files:', error);
+        loadingDialog.style.display = 'none'; // Hide the loading dialog
+    }
+});

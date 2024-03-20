@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Phish Hook</title>
 
-    <!-- Python -->
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
 </head>
 <body>
 
@@ -20,6 +17,12 @@
             <button class="bubble-button" id="urlscrape_btn">Parse URLs</button>
             <button class="bubble-button" id="scan_btn">Scan Database</button>
         </div>
+    </div>
+
+    <!-- Loading Dialog -->
+    <div class="loading-dialog" id="loadingDialog">
+        <div class="loading-spinner"></div>
+        <span class="loading-text">Scanning database...</span>
     </div>
 
     <div class="malicious_container" style="display: none;">
@@ -47,15 +50,10 @@
         <div class="alert"></div> 
     </div>
 
-
-
     <!-- Scraping & Formatting Script -->
     <script src="content.js"></script>
 
     <!-- Virtual Database Integration -->
-    <script src="sheet.js"></script>
-
-    <!-- Reading CSV file -->
     <script src="reader.js"></script>
 
     <!-- Button Animation -->

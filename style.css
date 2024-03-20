@@ -4,7 +4,7 @@
     font-family: "Geist Mono";
     src: url(https://assets.codepen.io/605876/GeistMonoVariableVF.ttf);
   }
-/* font-family: 'Open Sans', sans-serif; */
+
 /* Hide scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
     width: 5px;  /* Remove scrollbar space */
@@ -17,7 +17,7 @@
 
 /* Optional: add a thin scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-    background: #0ec6e8;  /* color of the scrollbar */
+    background: #0ec7e8ba;  /* color of the scrollbar */
 }
 
 .circle {
@@ -34,7 +34,7 @@
 }
 
 body {
-    background: #003566;
+    background: #3061cb;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     display: flex;
@@ -72,7 +72,7 @@ body {
     -ms-user-select: none; /* Internet Explorer/Edge */
     -webkit-user-select: none; /* Chrome, Safari, Opera */
     margin: 0 10px;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: "Geist Mono";
     font-weight: 500;
     display: inline-block;
     font-size: 1em;
@@ -81,7 +81,7 @@ body {
     appearance: none;
     background-color: 4facff;
     color: #434343;
-    border-radius: 2px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     position: relative;
@@ -160,7 +160,7 @@ body {
 
 .download-button {
     margin: 0 10px;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: "Geist Mono";
     font-weight: 500;
     display: inline-block;
     font-size: 1em;
@@ -304,7 +304,7 @@ h1 {
 .malicious_container {
     margin-top: 5px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     align-items: center;
   }
@@ -334,7 +334,36 @@ h1 {
     font-family: "Geist Mono";
   }
 
-.pyscript {
-    margin: 0.5rem;
-    transform: translatex(200px);
+.loading-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.loading-text {
+    color: #fff;
+    font-family: "Geist Mono";
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
