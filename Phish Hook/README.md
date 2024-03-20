@@ -1,3 +1,0 @@
-# SYST-230 Team 9
-
-PHISH HOOK v1.19
