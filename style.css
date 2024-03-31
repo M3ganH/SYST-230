@@ -34,7 +34,7 @@
 }
 
 body {
-    background: #3061cb;
+    background: #2234AE;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     display: flex;
@@ -76,13 +76,13 @@ body {
     font-weight: 500;
     display: inline-block;
     font-size: 1em;
-    padding: .5em 1em;
+    padding: 0.5em 1em;
     -webkit-appearance: none;
     appearance: none;
-    background-color: 4facff;
-    color: #434343;
+    background-color: rgba(109, 206, 255, 0.442); /* Translucent white background */
+    color: #ffffff; /* White text color */
+    border: 1px solid #ffffff; /* White border */
     border-radius: 10px;
-    border: none;
     cursor: pointer;
     position: relative;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
@@ -177,6 +177,11 @@ body {
 
 }
 
+.download-button:hover {
+    background-color: #008743;
+    color: #d2f8f8; /* Light text color */
+}
+
 .download-button:focus { outline: 1px; }
 
 .download-button:before, .download-button:after {
@@ -212,27 +217,7 @@ body {
     box-shadow: 0 2px 25px rgba(159, 111, 255, 0.5);
 }
 
-.download-button.animate:before {
-    display: block;
-    animation: topBubbles ease-in-out 0.75s forwards;
-}
 
-.download-button.animate:after {
-    display: block;
-    animation: bottomBubbles ease-in-out 0.75s forwards;
-}
-
-@keyframes topBubbles {
-    0% { background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%; }
-    50% { background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%; }
-    100% { background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%; background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
-}
-
-@keyframes bottomBubbles {
-    0% { background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%; }
-    50% { background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%; }
-    100% { background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%; background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
-}
 
 .alert {
     margin-bottom: 10px; /* Add margin at the bottom */
@@ -366,4 +351,33 @@ h1 {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.bottom-image-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Horizontally center the items */
+    margin-top: 0px; /* Add some space between the image and the content above */
+    margin-bottom: 10px;
+    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on mobile devices */
+    user-select: none; /* Prevent text selection */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+}
+
+.powered-by-text {
+    font-family: 'Times New Roman', Times, serif; /* Use the same font as the rest of the app */
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-right: 5px; /* Add some space between the text and the image */
+    font-weight: 100;
+    color: #aad644;
+    letter-spacing: .5px;
+    
+}
+
+.bottom-image {
+    max-width: 75px; /* Ensures the image scales within the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+
 }

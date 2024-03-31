@@ -159,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const urlScrapeBtn = document.getElementById('urlscrape_btn');
 
     emailScrapeBtn.addEventListener('click', () => {
-        document.body.style.background = 'linear-gradient(to bottom, #3061cb, #01438c, #000814)';
+        document.body.style.background = 'linear-gradient(to bottom, #2234AE, #191714)';
     });
 
     urlScrapeBtn.addEventListener('click', () => {
-        document.body.style.background = 'linear-gradient(to bottom, #3061cb, #01438c, #000814)';
+        document.body.style.background = 'linear-gradient(to bottom, #2234AE, #191714)';
     });
 });

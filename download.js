@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Generate timestamp
         const now = new Date();
-        const timestamp = `${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getDate()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getFullYear()}`;
+        const timestamp = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}_${now.getHours().toString().padStart(2, '0')}-${now.getMinutes().toString().padStart(2, '0')}-${now.getSeconds().toString().padStart(2, '0')}`;
 
         // Check if there is content to download
         if (contentToDownload.trim() !== '') {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `download_${timestamp}.txt`; // Include timestamp in the title
+        a.download = `download_${timestamp}.txt`; // Include timestamp in the filename
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
